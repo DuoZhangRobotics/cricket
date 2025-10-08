@@ -1,0 +1,9 @@
+{
+    "name": "Dual_UR5e",
+    "urdf": "dual_ur5e/spherized.urdf",
+    "srdf": "dual_ur5e/dual_ur5e_gripper.srdf",
+    "end_effector": "dummy_center_indicator_link",
+    "batch_size": 32,
+    "template": "templates/panda_main_template.hh",
+    "output": "dual_ur5e_prrtc_main.hh"
+}
