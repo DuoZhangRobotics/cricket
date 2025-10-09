@@ -16,4 +16,6 @@ cat "${1}_prrtc_approx.hh" >> "${1}.cuh"
 cat "${1}_prrtc_main.hh" >> "${1}.cuh"
 echo -e "\n}" >> "${1}.cuh"
 
+clang-format -i "${1}.cuh"
+
 echo "Generated ${1}.cuh"
