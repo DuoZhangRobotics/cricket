@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot name="ur5e_robot" path="assets/ur5e/dual_ur5e_gripper.urdf">
+<robot name="ur5e_robot" path="assets/ur5e/dual_ur5e_gripper_fixed_fingers.urdf">
 	<link name="base_fixture_link"></link>
 	<link name="base_link"></link>
 	<link name="base_link_1"></link>
@@ -593,17 +593,14 @@
 			<inertia ixx="0.00020005" ixy="-4.2442E-10" ixz="-2.9069E-10" iyy="0.00017832" iyz="-3.4402E-08" izz="0.00013478"></inertia>
 		</inertial>
 		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
 			<geometry>
-				<sphere radius="0.053503"></sphere>
+				<mesh filename="gripper/visual/robotiq_arg2f_85_base_link.dae" scale="0.001 0.001 0.001"></mesh>
 			</geometry>
-			<origin xyz="-1e-06 -1e-06 0.03976211301029474" rpy="0 0 0"></origin>
+			<material name="Dark">
+				<color rgba="0.1 0.1 0.1 1"></color>
+			</material>
 		</visual>
-		<collision>
-			<geometry>
-				<sphere radius="0.053503"></sphere>
-			</geometry>
-			<origin xyz="-1e-06 -1e-06 0.03976211301029474" rpy="0 0 0"></origin>
-		</collision>
 	</link>
 	<link name="left_outer_knuckle">
 		<inertial>
@@ -804,85 +801,6 @@
 				<sphere radius="0.008221"></sphere>
 			</geometry>
 			<origin xyz="-0.0036105705 -0.015462347 0.038357277" rpy="0 0 0"></origin>
-		</collision>
-	</link>
-	<link name="left_inner_finger_pad">
-		<inertial>
-			<origin rpy="0 0 0" xyz="0 0 0"></origin>
-			<mass value="0.11"></mass>
-			<inertia ixx="1.0E-05" ixy="0" ixz="0" iyy="1.0E-05" iyz="0" izz="1.0E-06"></inertia>
-		</inertial>
-		<visual>
-			<geometry>
-				<sphere radius="0.015281"></sphere>
-			</geometry>
-			<origin xyz="0.0 -1e-06 -0.0275" rpy="0 0 0"></origin>
-		</visual>
-		<visual>
-			<geometry>
-				<sphere radius="0.01477"></sphere>
-			</geometry>
-			<origin xyz="-9.7e-05 0.0 -0.015971" rpy="0 0 0"></origin>
-		</visual>
-		<visual>
-			<geometry>
-				<sphere radius="0.015009"></sphere>
-			</geometry>
-			<origin xyz="-2.9e-05 0.0 -0.001829" rpy="0 0 0"></origin>
-		</visual>
-		<visual>
-			<geometry>
-				<sphere radius="0.015176"></sphere>
-			</geometry>
-			<origin xyz="0.000124 0.0 0.012607" rpy="0 0 0"></origin>
-		</visual>
-		<visual>
-			<geometry>
-				<sphere radius="0.012342"></sphere>
-			</geometry>
-			<origin xyz="0.004069 -1e-06 0.028069" rpy="0 0 0"></origin>
-		</visual>
-		<visual>
-			<geometry>
-				<sphere radius="0.013923"></sphere>
-			</geometry>
-			<origin xyz="-0.003501 0.0 0.02598" rpy="0 0 0"></origin>
-		</visual>
-		<collision>
-			<geometry>
-				<sphere radius="0.015281"></sphere>
-			</geometry>
-			<origin xyz="0.0 -1e-06 -0.0275" rpy="0 0 0"></origin>
-		</collision>
-		<collision>
-			<geometry>
-				<sphere radius="0.01477"></sphere>
-			</geometry>
-			<origin xyz="-9.7e-05 0.0 -0.015971" rpy="0 0 0"></origin>
-		</collision>
-		<collision>
-			<geometry>
-				<sphere radius="0.015009"></sphere>
-			</geometry>
-			<origin xyz="-2.9e-05 0.0 -0.001829" rpy="0 0 0"></origin>
-		</collision>
-		<collision>
-			<geometry>
-				<sphere radius="0.015176"></sphere>
-			</geometry>
-			<origin xyz="0.000124 0.0 0.012607" rpy="0 0 0"></origin>
-		</collision>
-		<collision>
-			<geometry>
-				<sphere radius="0.012342"></sphere>
-			</geometry>
-			<origin xyz="0.004069 -1e-06 0.028069" rpy="0 0 0"></origin>
-		</collision>
-		<collision>
-			<geometry>
-				<sphere radius="0.013923"></sphere>
-			</geometry>
-			<origin xyz="-0.003501 0.0 0.02598" rpy="0 0 0"></origin>
 		</collision>
 	</link>
 	<link name="left_inner_knuckle">
@@ -1165,6 +1083,61 @@
 			<origin xyz="-0.0036105705 -0.015462347 0.038357277" rpy="0 0 0"></origin>
 		</collision>
 	</link>
+	<link name="left_inner_finger_pad">
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
+			<mass value="0.11"></mass>
+			<inertia ixx="1.0E-05" ixy="0" ixz="0" iyy="1.0E-05" iyz="0" izz="1.0E-06"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<sphere radius="0.015281"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.0 0.017501" rpy="0 0 0"></origin>
+		</visual>
+		<visual>
+			<geometry>
+				<sphere radius="0.015281"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.0 -0.0175" rpy="0 0 0"></origin>
+		</visual>
+		<visual>
+			<geometry>
+				<sphere radius="0.014664"></sphere>
+			</geometry>
+			<origin xyz="0.000205 0.0 0.005833" rpy="0 0 0"></origin>
+		</visual>
+		<visual>
+			<geometry>
+				<sphere radius="0.014593"></sphere>
+			</geometry>
+			<origin xyz="-0.000261 0.0 -0.006682" rpy="0 0 0"></origin>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.015281"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.0 0.017501" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.015281"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.0 -0.0175" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.014664"></sphere>
+			</geometry>
+			<origin xyz="0.000205 0.0 0.005833" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.014593"></sphere>
+			</geometry>
+			<origin xyz="-0.000261 0.0 -0.006682" rpy="0 0 0"></origin>
+		</collision>
+	</link>
 	<link name="right_inner_finger_pad">
 		<inertial>
 			<origin rpy="0 0 0" xyz="0 0 0"></origin>
@@ -1175,73 +1148,49 @@
 			<geometry>
 				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="0.0 -1e-06 -0.0275" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 0.017501" rpy="0 0 0"></origin>
 		</visual>
 		<visual>
 			<geometry>
-				<sphere radius="0.01477"></sphere>
+				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="-9.7e-05 0.0 -0.015971" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 -0.0175" rpy="0 0 0"></origin>
 		</visual>
 		<visual>
 			<geometry>
-				<sphere radius="0.015009"></sphere>
+				<sphere radius="0.014664"></sphere>
 			</geometry>
-			<origin xyz="-2.9e-05 0.0 -0.001829" rpy="0 0 0"></origin>
+			<origin xyz="0.000205 0.0 0.005833" rpy="0 0 0"></origin>
 		</visual>
 		<visual>
 			<geometry>
-				<sphere radius="0.015176"></sphere>
+				<sphere radius="0.014593"></sphere>
 			</geometry>
-			<origin xyz="0.000124 0.0 0.012607" rpy="0 0 0"></origin>
-		</visual>
-		<visual>
-			<geometry>
-				<sphere radius="0.012342"></sphere>
-			</geometry>
-			<origin xyz="0.004069 -1e-06 0.028069" rpy="0 0 0"></origin>
-		</visual>
-		<visual>
-			<geometry>
-				<sphere radius="0.013923"></sphere>
-			</geometry>
-			<origin xyz="-0.003501 0.0 0.02598" rpy="0 0 0"></origin>
+			<origin xyz="-0.000261 0.0 -0.006682" rpy="0 0 0"></origin>
 		</visual>
 		<collision>
 			<geometry>
 				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="0.0 -1e-06 -0.0275" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 0.017501" rpy="0 0 0"></origin>
 		</collision>
 		<collision>
 			<geometry>
-				<sphere radius="0.01477"></sphere>
+				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="-9.7e-05 0.0 -0.015971" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 -0.0175" rpy="0 0 0"></origin>
 		</collision>
 		<collision>
 			<geometry>
-				<sphere radius="0.015009"></sphere>
+				<sphere radius="0.014664"></sphere>
 			</geometry>
-			<origin xyz="-2.9e-05 0.0 -0.001829" rpy="0 0 0"></origin>
+			<origin xyz="0.000205 0.0 0.005833" rpy="0 0 0"></origin>
 		</collision>
 		<collision>
 			<geometry>
-				<sphere radius="0.015176"></sphere>
+				<sphere radius="0.014593"></sphere>
 			</geometry>
-			<origin xyz="0.000124 0.0 0.012607" rpy="0 0 0"></origin>
-		</collision>
-		<collision>
-			<geometry>
-				<sphere radius="0.012342"></sphere>
-			</geometry>
-			<origin xyz="0.004069 -1e-06 0.028069" rpy="0 0 0"></origin>
-		</collision>
-		<collision>
-			<geometry>
-				<sphere radius="0.013923"></sphere>
-			</geometry>
-			<origin xyz="-0.003501 0.0 0.02598" rpy="0 0 0"></origin>
+			<origin xyz="-0.000261 0.0 -0.006682" rpy="0 0 0"></origin>
 		</collision>
 	</link>
 	<link name="right_inner_knuckle">
@@ -1331,17 +1280,14 @@
 			<inertia ixx="0.00020005" ixy="-4.2442E-10" ixz="-2.9069E-10" iyy="0.00017832" iyz="-3.4402E-08" izz="0.00013478"></inertia>
 		</inertial>
 		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
 			<geometry>
-				<sphere radius="0.053503"></sphere>
+				<mesh filename="gripper/visual/robotiq_arg2f_85_base_link.dae" scale="0.001 0.001 0.001"></mesh>
 			</geometry>
-			<origin xyz="-1e-06 -1e-06 0.03976211301029474" rpy="0 0 0"></origin>
+			<material name="Dark">
+				<color rgba="0.1 0.1 0.1 1"></color>
+			</material>
 		</visual>
-		<collision>
-			<geometry>
-				<sphere radius="0.053503"></sphere>
-			</geometry>
-			<origin xyz="-1e-06 -1e-06 0.03976211301029474" rpy="0 0 0"></origin>
-		</collision>
 	</link>
 	<link name="left_outer_knuckle_1">
 		<inertial>
@@ -1554,73 +1500,49 @@
 			<geometry>
 				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="0.0 -1e-06 -0.0275" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 0.017501" rpy="0 0 0"></origin>
 		</visual>
 		<visual>
 			<geometry>
-				<sphere radius="0.01477"></sphere>
+				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="-9.7e-05 0.0 -0.015971" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 -0.0175" rpy="0 0 0"></origin>
 		</visual>
 		<visual>
 			<geometry>
-				<sphere radius="0.015009"></sphere>
+				<sphere radius="0.014664"></sphere>
 			</geometry>
-			<origin xyz="-2.9e-05 0.0 -0.001829" rpy="0 0 0"></origin>
+			<origin xyz="0.000205 0.0 0.005833" rpy="0 0 0"></origin>
 		</visual>
 		<visual>
 			<geometry>
-				<sphere radius="0.015176"></sphere>
+				<sphere radius="0.014593"></sphere>
 			</geometry>
-			<origin xyz="0.000124 0.0 0.012607" rpy="0 0 0"></origin>
-		</visual>
-		<visual>
-			<geometry>
-				<sphere radius="0.012342"></sphere>
-			</geometry>
-			<origin xyz="0.004069 -1e-06 0.028069" rpy="0 0 0"></origin>
-		</visual>
-		<visual>
-			<geometry>
-				<sphere radius="0.013923"></sphere>
-			</geometry>
-			<origin xyz="-0.003501 0.0 0.02598" rpy="0 0 0"></origin>
+			<origin xyz="-0.000261 0.0 -0.006682" rpy="0 0 0"></origin>
 		</visual>
 		<collision>
 			<geometry>
 				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="0.0 -1e-06 -0.0275" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 0.017501" rpy="0 0 0"></origin>
 		</collision>
 		<collision>
 			<geometry>
-				<sphere radius="0.01477"></sphere>
+				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="-9.7e-05 0.0 -0.015971" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 -0.0175" rpy="0 0 0"></origin>
 		</collision>
 		<collision>
 			<geometry>
-				<sphere radius="0.015009"></sphere>
+				<sphere radius="0.014664"></sphere>
 			</geometry>
-			<origin xyz="-2.9e-05 0.0 -0.001829" rpy="0 0 0"></origin>
+			<origin xyz="0.000205 0.0 0.005833" rpy="0 0 0"></origin>
 		</collision>
 		<collision>
 			<geometry>
-				<sphere radius="0.015176"></sphere>
+				<sphere radius="0.014593"></sphere>
 			</geometry>
-			<origin xyz="0.000124 0.0 0.012607" rpy="0 0 0"></origin>
-		</collision>
-		<collision>
-			<geometry>
-				<sphere radius="0.012342"></sphere>
-			</geometry>
-			<origin xyz="0.004069 -1e-06 0.028069" rpy="0 0 0"></origin>
-		</collision>
-		<collision>
-			<geometry>
-				<sphere radius="0.013923"></sphere>
-			</geometry>
-			<origin xyz="-0.003501 0.0 0.02598" rpy="0 0 0"></origin>
+			<origin xyz="-0.000261 0.0 -0.006682" rpy="0 0 0"></origin>
 		</collision>
 	</link>
 	<link name="left_inner_knuckle_1">
@@ -1913,73 +1835,49 @@
 			<geometry>
 				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="0.0 -1e-06 -0.0275" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 0.017501" rpy="0 0 0"></origin>
 		</visual>
 		<visual>
 			<geometry>
-				<sphere radius="0.01477"></sphere>
+				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="-9.7e-05 0.0 -0.015971" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 -0.0175" rpy="0 0 0"></origin>
 		</visual>
 		<visual>
 			<geometry>
-				<sphere radius="0.015009"></sphere>
+				<sphere radius="0.014664"></sphere>
 			</geometry>
-			<origin xyz="-2.9e-05 0.0 -0.001829" rpy="0 0 0"></origin>
+			<origin xyz="0.000205 0.0 0.005833" rpy="0 0 0"></origin>
 		</visual>
 		<visual>
 			<geometry>
-				<sphere radius="0.015176"></sphere>
+				<sphere radius="0.014593"></sphere>
 			</geometry>
-			<origin xyz="0.000124 0.0 0.012607" rpy="0 0 0"></origin>
-		</visual>
-		<visual>
-			<geometry>
-				<sphere radius="0.012342"></sphere>
-			</geometry>
-			<origin xyz="0.004069 -1e-06 0.028069" rpy="0 0 0"></origin>
-		</visual>
-		<visual>
-			<geometry>
-				<sphere radius="0.013923"></sphere>
-			</geometry>
-			<origin xyz="-0.003501 0.0 0.02598" rpy="0 0 0"></origin>
+			<origin xyz="-0.000261 0.0 -0.006682" rpy="0 0 0"></origin>
 		</visual>
 		<collision>
 			<geometry>
 				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="0.0 -1e-06 -0.0275" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 0.017501" rpy="0 0 0"></origin>
 		</collision>
 		<collision>
 			<geometry>
-				<sphere radius="0.01477"></sphere>
+				<sphere radius="0.015281"></sphere>
 			</geometry>
-			<origin xyz="-9.7e-05 0.0 -0.015971" rpy="0 0 0"></origin>
+			<origin xyz="0.0 0.0 -0.0175" rpy="0 0 0"></origin>
 		</collision>
 		<collision>
 			<geometry>
-				<sphere radius="0.015009"></sphere>
+				<sphere radius="0.014664"></sphere>
 			</geometry>
-			<origin xyz="-2.9e-05 0.0 -0.001829" rpy="0 0 0"></origin>
+			<origin xyz="0.000205 0.0 0.005833" rpy="0 0 0"></origin>
 		</collision>
 		<collision>
 			<geometry>
-				<sphere radius="0.015176"></sphere>
+				<sphere radius="0.014593"></sphere>
 			</geometry>
-			<origin xyz="0.000124 0.0 0.012607" rpy="0 0 0"></origin>
-		</collision>
-		<collision>
-			<geometry>
-				<sphere radius="0.012342"></sphere>
-			</geometry>
-			<origin xyz="0.004069 -1e-06 0.028069" rpy="0 0 0"></origin>
-		</collision>
-		<collision>
-			<geometry>
-				<sphere radius="0.013923"></sphere>
-			</geometry>
-			<origin xyz="-0.003501 0.0 0.02598" rpy="0 0 0"></origin>
+			<origin xyz="-0.000261 0.0 -0.006682" rpy="0 0 0"></origin>
 		</collision>
 	</link>
 	<link name="right_inner_knuckle_1">
@@ -2065,12 +1963,12 @@
 	<joint name="base_fixture_j_base_link" type="fixed">
 		<parent link="base_fixture_link"></parent>
 		<child link="base_link"></child>
-		<origin rpy=" 0 0 0" xyz="-0.55 0.0 0.0"></origin>
+		<origin rpy="0 0 0" xyz="-0.55 0 0.0"></origin>
 	</joint>
 	<joint name="base_fixture_j_base_link_1" type="fixed">
 		<parent link="base_fixture_link"></parent>
 		<child link="base_link_1"></child>
-		<origin rpy=" 0 0 0" xyz="0.55 0.0 0.0"></origin>
+		<origin rpy=" 0 0 -3.105345355171964" xyz="0.5496187399999999 0.02588207 0.0"></origin>
 	</joint>
 	<joint name="base_link-base_link_inertia" type="fixed">
 		<parent link="base_link"></parent>
@@ -2143,7 +2041,7 @@
 	<joint name="base_link-base_link_inertia_1" type="fixed">
 		<parent link="base_link_1"></parent>
 		<child link="base_link_inertia_1"></child>
-		<origin rpy="0 0 0" xyz="0 0 0"></origin>
+		<origin rpy="0 0 3.141592653589793" xyz="0 0 0"></origin>
 	</joint>
 	<joint name="shoulder_pan_joint_1" type="revolute">
 		<parent link="base_link_inertia_1"></parent>
@@ -2208,161 +2106,119 @@
 		<parent link="flange"></parent>
 		<child link="robotiq_arg2f_base_link"></child>
 	</joint>
-	<joint name="finger_joint" type="revolute">
+	<joint name="finger_joint" type="fixed">
 		<origin rpy="0 0 3.141592653589793" xyz="0 -0.0306011 0.054904"></origin>
 		<parent link="robotiq_arg2f_base_link"></parent>
 		<child link="left_outer_knuckle"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="0" upper="0.8" velocity="100.2"></limit>
 	</joint>
 	<joint name="left_outer_finger_joint" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0.0315 -0.0041"></origin>
 		<parent link="left_outer_knuckle"></parent>
 		<child link="left_outer_finger"></child>
-		<axis xyz="1 0 0"></axis>
 	</joint>
-	<joint name="left_inner_knuckle_joint" type="revolute">
+	<joint name="left_inner_knuckle_joint" type="fixed">
 		<origin rpy="0 0 3.141592653589793" xyz="0 -0.0127 0.06142"></origin>
 		<parent link="robotiq_arg2f_base_link"></parent>
 		<child link="left_inner_knuckle"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="0" upper="0.8" velocity="100.2"></limit>
-		<mimic joint="finger_joint" multiplier="1" offset="0"></mimic>
 	</joint>
-	<joint name="left_inner_finger_joint" type="revolute">
+	<joint name="left_inner_finger_joint" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0.0061 0.0471"></origin>
 		<parent link="left_outer_finger"></parent>
 		<child link="left_inner_finger"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="-0.8" upper="0" velocity="100.2"></limit>
-		<mimic joint="finger_joint" multiplier="-1" offset="0"></mimic>
 	</joint>
 	<joint name="left_inner_finger_pad_joint" type="fixed">
 		<origin rpy="0 0 0" xyz="0 -0.0190203446692936 0.03867"></origin>
 		<parent link="left_inner_finger"></parent>
 		<child link="left_inner_finger_pad"></child>
-		<axis xyz="0 0 1"></axis>
 	</joint>
-	<joint name="right_outer_knuckle_joint" type="revolute">
+	<joint name="right_outer_knuckle_joint" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0.0306011 0.054904"></origin>
 		<parent link="robotiq_arg2f_base_link"></parent>
 		<child link="right_outer_knuckle"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="0" upper="0.8" velocity="100.2"></limit>
-		<mimic joint="finger_joint" multiplier="1" offset="0"></mimic>
 	</joint>
 	<joint name="right_outer_finger_joint" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0.0315 -0.0041"></origin>
 		<parent link="right_outer_knuckle"></parent>
 		<child link="right_outer_finger"></child>
-		<axis xyz="1 0 0"></axis>
 	</joint>
-	<joint name="right_inner_knuckle_joint" type="revolute">
+	<joint name="right_inner_knuckle_joint" type="fixed">
 		<origin rpy="0 0 0.0" xyz="0 0.0127 0.06142"></origin>
 		<parent link="robotiq_arg2f_base_link"></parent>
 		<child link="right_inner_knuckle"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="0" upper="0.8" velocity="100.2"></limit>
-		<mimic joint="finger_joint" multiplier="1" offset="0"></mimic>
 	</joint>
-	<joint name="right_inner_finger_joint" type="revolute">
+	<joint name="right_inner_finger_joint" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0.0061 0.0471"></origin>
 		<parent link="right_outer_finger"></parent>
 		<child link="right_inner_finger"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="-0.8" upper="0" velocity="100.2"></limit>
-		<mimic joint="finger_joint" multiplier="-1" offset="0"></mimic>
 	</joint>
 	<joint name="right_inner_finger_pad_joint" type="fixed">
 		<origin rpy="0 0 0" xyz="0 -0.0190203446692936 0.03867"></origin>
 		<parent link="right_inner_finger"></parent>
 		<child link="right_inner_finger_pad"></child>
-		<axis xyz="0 0 1"></axis>
 	</joint>
 	<joint name="dummy_center_fixed_joint" type="fixed">
 		<parent link="robotiq_arg2f_base_link"></parent>
 		<child link="dummy_center_indicator_link"></child>
-		<origin xyz="0 0 0.1725"></origin>
+		<origin xyz="0 0 0.178"></origin>
 	</joint>
 	<joint name="flange-gripper_1" type="fixed">
 		<origin rpy="1.57079632679 0 1.57079632679" xyz="0 0 0"></origin>
 		<parent link="flange_1"></parent>
 		<child link="robotiq_arg2f_base_link_1"></child>
 	</joint>
-	<joint name="finger_joint_1" type="revolute">
+	<joint name="finger_joint_1" type="fixed">
 		<origin rpy="0 0 3.141592653589793" xyz="0 -0.0306011 0.054904"></origin>
 		<parent link="robotiq_arg2f_base_link_1"></parent>
 		<child link="left_outer_knuckle_1"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="0" upper="0.8" velocity="100.2"></limit>
 	</joint>
 	<joint name="left_outer_finger_joint_1" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0.0315 -0.0041"></origin>
 		<parent link="left_outer_knuckle_1"></parent>
 		<child link="left_outer_finger_1"></child>
-		<axis xyz="1 0 0"></axis>
 	</joint>
-	<joint name="left_inner_knuckle_joint_1" type="revolute">
+	<joint name="left_inner_knuckle_joint_1" type="fixed">
 		<origin rpy="0 0 3.141592653589793" xyz="0 -0.0127 0.06142"></origin>
 		<parent link="robotiq_arg2f_base_link_1"></parent>
 		<child link="left_inner_knuckle_1"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="0" upper="0.8" velocity="100.2"></limit>
-		<mimic joint="finger_joint_1" multiplier="1" offset="0"></mimic>
 	</joint>
-	<joint name="left_inner_finger_joint_1" type="revolute">
+	<joint name="left_inner_finger_joint_1" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0.0061 0.0471"></origin>
 		<parent link="left_outer_finger_1"></parent>
 		<child link="left_inner_finger_1"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="-0.8" upper="0" velocity="100.2"></limit>
-		<mimic joint="finger_joint_1" multiplier="-1" offset="0"></mimic>
 	</joint>
 	<joint name="left_inner_finger_pad_joint_1" type="fixed">
 		<origin rpy="0 0 0" xyz="0 -0.0190203446692936 0.03867"></origin>
 		<parent link="left_inner_finger_1"></parent>
 		<child link="left_inner_finger_pad_1"></child>
-		<axis xyz="0 0 1"></axis>
 	</joint>
-	<joint name="right_outer_knuckle_joint_1" type="revolute">
+	<joint name="right_outer_knuckle_joint_1" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0.0306011 0.054904"></origin>
 		<parent link="robotiq_arg2f_base_link_1"></parent>
 		<child link="right_outer_knuckle_1"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="0" upper="0.8" velocity="100.2"></limit>
-		<mimic joint="finger_joint_1" multiplier="1" offset="0"></mimic>
 	</joint>
 	<joint name="right_outer_finger_joint_1" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0.0315 -0.0041"></origin>
 		<parent link="right_outer_knuckle_1"></parent>
 		<child link="right_outer_finger_1"></child>
-		<axis xyz="1 0 0"></axis>
 	</joint>
-	<joint name="right_inner_knuckle_joint_1" type="revolute">
+	<joint name="right_inner_knuckle_joint_1" type="fixed">
 		<origin rpy="0 0 0.0" xyz="0 0.0127 0.06142"></origin>
 		<parent link="robotiq_arg2f_base_link_1"></parent>
 		<child link="right_inner_knuckle_1"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="0" upper="0.8" velocity="100.2"></limit>
-		<mimic joint="finger_joint_1" multiplier="1" offset="0"></mimic>
 	</joint>
-	<joint name="right_inner_finger_joint_1" type="revolute">
+	<joint name="right_inner_finger_joint_1" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0.0061 0.0471"></origin>
 		<parent link="right_outer_finger_1"></parent>
 		<child link="right_inner_finger_1"></child>
-		<axis xyz="1 0 0"></axis>
-		<limit effort="1000" lower="-0.8" upper="0" velocity="100.2"></limit>
-		<mimic joint="finger_joint_1" multiplier="-1" offset="0"></mimic>
 	</joint>
 	<joint name="right_inner_finger_pad_joint_1" type="fixed">
 		<origin rpy="0 0 0" xyz="0 -0.0190203446692936 0.03867"></origin>
 		<parent link="right_inner_finger_1"></parent>
 		<child link="right_inner_finger_pad_1"></child>
-		<axis xyz="0 0 1"></axis>
 	</joint>
 	<joint name="dummy_center_fixed_joint_1" type="fixed">
 		<parent link="robotiq_arg2f_base_link_1"></parent>
 		<child link="dummy_center_indicator_link_1"></child>
-		<origin xyz="0 0 0.1725"></origin>
+		<origin xyz="0 0 0.178"></origin>
 	</joint>
 </robot>
