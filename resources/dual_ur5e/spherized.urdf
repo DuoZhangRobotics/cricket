@@ -593,14 +593,17 @@
 			<inertia ixx="0.00020005" ixy="-4.2442E-10" ixz="-2.9069E-10" iyy="0.00017832" iyz="-3.4402E-08" izz="0.00013478"></inertia>
 		</inertial>
 		<visual>
-			<origin rpy="0 0 0" xyz="0 0 0"></origin>
 			<geometry>
-				<mesh filename="gripper/visual/robotiq_arg2f_85_base_link.dae" scale="0.001 0.001 0.001"></mesh>
+				<sphere radius="0.053503"></sphere>
 			</geometry>
-			<material name="Dark">
-				<color rgba="0.1 0.1 0.1 1"></color>
-			</material>
+			<origin xyz="-1e-06 -1e-06 0.03976211301029474" rpy="0 0 0"></origin>
 		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.053503"></sphere>
+			</geometry>
+			<origin xyz="-1e-06 -1e-06 0.03976211301029474" rpy="0 0 0"></origin>
+		</collision>
 	</link>
 	<link name="left_outer_knuckle">
 		<inertial>
@@ -1280,14 +1283,17 @@
 			<inertia ixx="0.00020005" ixy="-4.2442E-10" ixz="-2.9069E-10" iyy="0.00017832" iyz="-3.4402E-08" izz="0.00013478"></inertia>
 		</inertial>
 		<visual>
-			<origin rpy="0 0 0" xyz="0 0 0"></origin>
 			<geometry>
-				<mesh filename="gripper/visual/robotiq_arg2f_85_base_link.dae" scale="0.001 0.001 0.001"></mesh>
+				<sphere radius="0.053503"></sphere>
 			</geometry>
-			<material name="Dark">
-				<color rgba="0.1 0.1 0.1 1"></color>
-			</material>
+			<origin xyz="-1e-06 -1e-06 0.03976211301029474" rpy="0 0 0"></origin>
 		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.053503"></sphere>
+			</geometry>
+			<origin xyz="-1e-06 -1e-06 0.03976211301029474" rpy="0 0 0"></origin>
+		</collision>
 	</link>
 	<link name="left_outer_knuckle_1">
 		<inertial>

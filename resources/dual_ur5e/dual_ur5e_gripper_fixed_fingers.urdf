@@ -472,6 +472,12 @@
         <color rgba="0.1 0.1 0.1 1" />
       </material>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="gripper/collision/robotiq_arg2f_base_link.stl"/>
+      </geometry>
+    </collision>
   </link>
   <link name="left_outer_knuckle">
     <inertial>
@@ -771,6 +777,12 @@
         <color rgba="0.1 0.1 0.1 1" />
       </material>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="gripper/collision/robotiq_arg2f_base_link.stl"/>
+      </geometry>
+    </collision>
   </link>
   <link name="left_outer_knuckle_1">
     <inertial>
